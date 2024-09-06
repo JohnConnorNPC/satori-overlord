@@ -103,15 +103,8 @@ Copyright (C) https://github.com/JohnConnorNPC
 
 ## Screenshots
 
-### Settings Page
-![Settings Page](path_to_image)
-
-### Host List & Minion Status
-![Host List](path_to_image)
-
-### Right-Click Menu for Hosts
-![Right-Click Hosts](path_to_image)
-
-### Right-Click Menu for Scripts
-![Right-Click Scripts](path_to_image)
+![image](https://github.com/user-attachments/assets/27c04ce2-8c24-4121-8303-379ea29e2e8d)
+![image](https://github.com/user-attachments/assets/768589c4-c7c2-420a-886c-cb08351e632a)
+![image](https://github.com/user-attachments/assets/1d031791-8f45-48f3-ae76-9e3ebfb3a881)
+![image](https://github.com/user-attachments/assets/6bfe1097-82c0-48c3-b9a2-4f2fc3c62c1e)
 
