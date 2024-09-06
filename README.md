@@ -72,16 +72,10 @@ You can also right-click on any script in the scripts list for the following opt
 
 ### Server Setup
 1. Download the release files and extract them to the `/overlord` directory on your server.
-2. run: apt install dos2unix libunwind8 libglib2.0-0 ca-certificates
-3. Add the `overlord.sh` script to the root cron for automatic startup:
-    ```bash
-    sudo crontab -e -u root
-    ```
-   Add the following line:
-    ```bash
-    @reboot /overlord/overlord.sh
-    ```
-4. Reboot the server and access the GUI via `http://server_ip_or_host:8080`.
+2. check install_overlord.sh suits your system
+3. run: ./install_overlord.sh
+
+The server will reboot and the GUI will be available via `http://server_ip_or_host:8080`.
 
 ### Client (Minion) Setup
 1. Edit the `install_minion.sh` script from the GUI to suit your client setup.
