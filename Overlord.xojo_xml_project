@@ -7,7 +7,7 @@
  <MinorVersion>0</MinorVersion>
  <SubVersion>0</SubVersion>
  <Release>2</Release>
- <NonRelease>37</NonRelease>
+ <NonRelease>40</NonRelease>
  <Region></Region>
  <ShortVersion></ShortVersion>
  <LongVersion></LongVersion>
@@ -188,7 +188,18 @@
    <SourceLine>keystore.setupkeystore(ks)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' Initialize dictionary to store host metrics</SourceLine>
-   <SourceLine>host_metrics = new Dictionary</SourceLine>
+   <SourceLine>host_metrics = New Dictionary</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>KeyStore.SetValue("overlord.sh","Hidden")</SourceLine>
+   <SourceLine>KeyStore.SetValue("minion.sh","Hidden")</SourceLine>
+   <SourceLine>KeyStore.SetValue("satori_cron_install_script.sh","Hidden")</SourceLine>
+   <SourceLine>KeyStore.SetValue("minion.py","Hidden")</SourceLine>
+   <SourceLine>KeyStore.SetValue("install_minion.sh","Hidden")</SourceLine>
+   <SourceLine>KeyStore.SetValue("install_overlord.sh","Hidden")</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -318,12 +329,12 @@
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
  <Compatibility></Compatibility>
- <PropertyVal Name="InterruptMessage">We are having trouble communicating with the server. Please wait a moment while we attempt to reconnect.</PropertyVal>
- <PropertyVal Name="DisconnectMessage">You have been disconnected from this application.</PropertyVal>
- <PropertyVal Name="ConfirmMessage"></PropertyVal>
- <PropertyVal Name="AllowTabOrderWrap">True</PropertyVal>
- <PropertyVal Name="ColorMode">2</PropertyVal>
  <PropertyVal Name="SendEventsInBatches">True</PropertyVal>
+ <PropertyVal Name="ColorMode">2</PropertyVal>
+ <PropertyVal Name="AllowTabOrderWrap">True</PropertyVal>
+ <PropertyVal Name="ConfirmMessage"></PropertyVal>
+ <PropertyVal Name="DisconnectMessage">You have been disconnected from this application.</PropertyVal>
+ <PropertyVal Name="InterruptMessage">We are having trouble communicating with the server. Please wait a moment while we attempt to reconnect.</PropertyVal>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -494,6 +505,18 @@
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
  <Compatibility></Compatibility>
+ <HookInstance>
+  <ItemName>Shown</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1678473215</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Shown()</SourceLine>
+   <SourceLine>me.Title="Satori Overlord: " + app.MajorVersion.ToString + "." + app.MinorVersion.ToString + "." + app.NonReleaseVersion.ToString</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
  <Method>
   <ItemName>UpdatePluginsListbox</ItemName>
   <Compatibility></Compatibility>
@@ -770,7 +793,7 @@
  <PropertyVal Name="ControlCount">0</PropertyVal>
  <PropertyVal Name="PanelIndex">0</PropertyVal>
  <PropertyVal Name="ImplicitInstance">True</PropertyVal>
- <PropertyVal Name="Title">Host Manage</PropertyVal>
+ <PropertyVal Name="Title">Satori Overlord</PropertyVal>
  <PropertyVal Name="MinimumHeight">400</PropertyVal>
  <PropertyVal Name="MinimumWidth">600</PropertyVal>
  <PropertyVal Name="Height">774</PropertyVal>
@@ -1399,9 +1422,9 @@
     <SourceLine>If Me.doReboot Then</SourceLine>
     <SourceLine>Dim simrebshu As Boolean = KeyStore.GetValue("simulate_reboot_shutdown","False").ToBoolean</SourceLine>
     <SourceLine>If simrebshu Then </SourceLine>
-    <SourceLine>RunCommandOnAllSelected(ListBox1,"shutdown -k -r +1")</SourceLine>
+    <SourceLine>RunCommandOnAllSelected(ListBox1,"sudo shutdown -k -r +1")</SourceLine>
     <SourceLine>Else</SourceLine>
-    <SourceLine>RunCommandOnAllSelected(ListBox1,"shutdown -r +1")</SourceLine>
+    <SourceLine>RunCommandOnAllSelected(ListBox1,"sudo shutdown -r +1")</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>end if</SourceLine>
@@ -1423,9 +1446,9 @@
     <SourceLine>If Me.doShutdown Then</SourceLine>
     <SourceLine>Dim simrebshu As Boolean = KeyStore.GetValue("simulate_reboot_shutdown","False").ToBoolean</SourceLine>
     <SourceLine>If simrebshu Then </SourceLine>
-    <SourceLine>RunCommandOnAllSelected(ListBox1,"shutdown -k -P +1")</SourceLine>
+    <SourceLine>RunCommandOnAllSelected(ListBox1,"sudo shutdown -k -P +1")</SourceLine>
     <SourceLine>Else</SourceLine>
-    <SourceLine>RunCommandOnAllSelected(ListBox1,"shutdown -P +1")</SourceLine>
+    <SourceLine>RunCommandOnAllSelected(ListBox1,"sudo shutdown -P +1")</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>End If</SourceLine>
@@ -1544,7 +1567,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>815536127</PartID>
+  <PartID>1503231999</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -1562,7 +1585,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>899149823</PartID>
+  <PartID>88856575</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -1601,7 +1624,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1074227199</PartID>
+  <PartID>558895103</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1636,7 +1659,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>359327743</PartID>
+  <PartID>65400831</PartID>
  </Control>
  <Control>
   <ControlClass>WebListBox</ControlClass>
@@ -1685,7 +1708,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1454049279</PartID>
+  <PartID>1416787967</PartID>
  </Control>
  <Control>
   <ControlClass>WebFileUploader</ControlClass>
@@ -1722,7 +1745,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1148168191</PartID>
+  <PartID>1617436671</PartID>
  </Control>
  <Control>
   <ControlClass>WebCheckbox</ControlClass>
@@ -1755,7 +1778,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1262669823</PartID>
+  <PartID>1149417471</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -1773,7 +1796,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1549508607</PartID>
+  <PartID>1818693631</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1808,7 +1831,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>944760831</PartID>
+  <PartID>210608127</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Reboot</ControlClass>
@@ -1816,6 +1839,7 @@
   <PropertyVal Name="Attributes"></PropertyVal>
   <PropertyVal Name="ControlCount">0</PropertyVal>
   <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="doReboot">False</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
   <PropertyVal Name="Height">166</PropertyVal>
   <PropertyVal Name="Index">-2147483648</PropertyVal>
@@ -1845,7 +1869,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>90353663</PartID>
+  <PartID>366047231</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Shutdown</ControlClass>
@@ -1854,6 +1878,7 @@
   <PropertyVal Name="ControlCount">0</PropertyVal>
   <PropertyVal Name="ControlID"></PropertyVal>
   <PropertyVal Name="doReboot">False</PropertyVal>
+  <PropertyVal Name="doShutdown">False</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
   <PropertyVal Name="Height">166</PropertyVal>
   <PropertyVal Name="Index">-2147483648</PropertyVal>
@@ -1883,7 +1908,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1171093503</PartID>
+  <PartID>1464336383</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1918,7 +1943,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>11</ControlIndex>
   <Locked>0</Locked>
-  <PartID>575447039</PartID>
+  <PartID>682375167</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -1957,7 +1982,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>12</ControlIndex>
   <Locked>0</Locked>
-  <PartID>235712511</PartID>
+  <PartID>1646497791</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -1972,12 +1997,10 @@
   <PropertyVal Name="RunMode">2</PropertyVal>
   <PropertyVal Name="Scope">0</PropertyVal>
   <PropertyVal Name="Super">WebTimer</PropertyVal>
-  <PropertyVal Name="TabIndex">11</PropertyVal>
-  <PropertyVal Name="TabStop">True</PropertyVal>
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>13</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2121185279</PartID>
+  <PartID>950511615</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Delete</ControlClass>
@@ -1985,6 +2008,7 @@
   <PropertyVal Name="Attributes"></PropertyVal>
   <PropertyVal Name="ControlCount">0</PropertyVal>
   <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="doDelete">False</PropertyVal>
   <PropertyVal Name="doReboot">False</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
   <PropertyVal Name="Height">166</PropertyVal>
@@ -2015,7 +2039,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>14</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1387386879</PartID>
+  <PartID>421042175</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="60266495">
@@ -3091,7 +3115,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1709819903</PartID>
+  <PartID>2037057535</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3126,7 +3150,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1069402111</PartID>
+  <PartID>601780223</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3161,7 +3185,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>312823807</PartID>
+  <PartID>1864546303</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -3179,7 +3203,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>481296383</PartID>
+  <PartID>2136678399</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3218,7 +3242,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1598550015</PartID>
+  <PartID>1973432319</PartID>
  </Control>
 </block>
 <block type="WebContainer" ID="98473983">
@@ -3533,6 +3557,39 @@
  <ControlBehavior>
   <Superclass>WebLabel</Superclass>
  </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>WebButton</Superclass>
+  <HookInstance>
+   <ItemName>Pressed</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1576187903</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Pressed()</SourceLine>
+    <SourceLine>Quit()</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>WebButton</Superclass>
+  <HookInstance>
+   <ItemName>Pressed</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>629237759</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Pressed()</SourceLine>
+    <SourceLine>Dim s As New shell</SourceLine>
+    <SourceLine>s.TimeOut=1000</SourceLine>
+    <SourceLine>s.Execute("pskill -f ./Overlord")</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
  <Control>
   <ControlClass>WebTextField</ControlClass>
   <ItemName>WebTextField</ItemName>
@@ -3570,7 +3627,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>416481279</PartID>
+  <PartID>1320544255</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3609,7 +3666,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>614920191</PartID>
+  <PartID>583434239</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3648,7 +3705,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>32692223</PartID>
+  <PartID>633962495</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3687,7 +3744,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1134211071</PartID>
+  <PartID>98727935</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3726,7 +3783,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2091970559</PartID>
+  <PartID>1060171775</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3765,7 +3822,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2027978751</PartID>
+  <PartID>36282367</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3804,7 +3861,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1168474111</PartID>
+  <PartID>1844260863</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3839,7 +3896,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1299687423</PartID>
+  <PartID>1567801343</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3878,7 +3935,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1999249407</PartID>
+  <PartID>1722480639</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3917,7 +3974,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>845078527</PartID>
+  <PartID>1827325951</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3956,7 +4013,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1340155903</PartID>
+  <PartID>1078429695</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3995,7 +4052,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>11</ControlIndex>
   <Locked>0</Locked>
-  <PartID>73699327</PartID>
+  <PartID>1301094399</PartID>
  </Control>
  <Control>
   <ControlClass>WebCheckbox</ControlClass>
@@ -4028,7 +4085,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>12</ControlIndex>
   <Locked>0</Locked>
-  <PartID>208529407</PartID>
+  <PartID>1879392255</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -4067,7 +4124,77 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>13</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2088605695</PartID>
+  <PartID>1604530175</PartID>
+ </Control>
+ <Control>
+  <ControlClass>WebButton</ControlClass>
+  <ItemName>WebButton</ItemName>
+  <PropertyVal Name="AllowAutoDisable">False</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Caption">Shutdown Overlord</PropertyVal>
+  <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="Default">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">38</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Indicator">0</PropertyVal>
+  <PropertyVal Name="Left">27</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockHorizontal">False</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockVertical">False</PropertyVal>
+  <PropertyVal Name="Name">Button2</PropertyVal>
+  <PropertyVal Name="Outlined">False</PropertyVal>
+  <PropertyVal Name="PanelIndex">0</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">WebButton</PropertyVal>
+  <PropertyVal Name="TabIndex">14</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="Tooltip"></PropertyVal>
+  <PropertyVal Name="Top">470</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">183</PropertyVal>
+  <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
+  <ControlIndex>14</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>252899327</PartID>
+ </Control>
+ <Control>
+  <ControlClass>WebButton</ControlClass>
+  <ItemName>WebButton</ItemName>
+  <PropertyVal Name="AllowAutoDisable">False</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Caption">kill overlord.sh</PropertyVal>
+  <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="Default">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">38</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Indicator">0</PropertyVal>
+  <PropertyVal Name="Left">218</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockHorizontal">False</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockVertical">False</PropertyVal>
+  <PropertyVal Name="Name">Button3</PropertyVal>
+  <PropertyVal Name="Outlined">False</PropertyVal>
+  <PropertyVal Name="PanelIndex">0</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">WebButton</PropertyVal>
+  <PropertyVal Name="TabIndex">15</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="Tooltip"></PropertyVal>
+  <PropertyVal Name="Top">470</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">183</PropertyVal>
+  <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
+  <ControlIndex>15</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>402282495</PartID>
  </Control>
 </block>
 <block type="WebView" ID="514918399">
@@ -4357,7 +4484,7 @@
   <PropertyVal Name="FontSize">0.00</PropertyVal>
   <PropertyVal Name="Height">38</PropertyVal>
   <PropertyVal Name="Index">-2147483648</PropertyVal>
-  <PropertyVal Name="indicator">0</PropertyVal>
+  <PropertyVal Name="Indicator">0</PropertyVal>
   <PropertyVal Name="Italic">False</PropertyVal>
   <PropertyVal Name="Left">20</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
@@ -4384,7 +4511,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1232494591</PartID>
+  <PartID>1402032127</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4419,7 +4546,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1462710271</PartID>
+  <PartID>768903167</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4454,7 +4581,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1495912447</PartID>
+  <PartID>903809023</PartID>
  </Control>
 </block>
 <block type="WebView" ID="492783615">
@@ -4771,7 +4898,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1315819519</PartID>
+  <PartID>86169599</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4806,7 +4933,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1335443455</PartID>
+  <PartID>1989531647</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4841,7 +4968,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>621168639</PartID>
+  <PartID>1207523327</PartID>
  </Control>
 </block>
 <block type="WebView" ID="1046253567">
@@ -5158,7 +5285,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1866170367</PartID>
+  <PartID>1766522879</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -5193,7 +5320,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>407205887</PartID>
+  <PartID>769363967</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -5228,7 +5355,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>5861375</PartID>
+  <PartID>1746665471</PartID>
  </Control>
 </block>
 <block type="WebContainer" ID="839344127">
@@ -5508,7 +5635,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1354821631</PartID>
+  <PartID>778688511</PartID>
  </Control>
 </block>
 <block type="UIState" ID="0">
@@ -5529,14 +5656,15 @@
   <ItemData>0</ItemData>
  </WarningPreferences>
  <StudioWindowState>
-  <EditBounds><Rect left="0" top="0" width="3440" height="1407"/></EditBounds>
-  <WindowMaximized>0</WindowMaximized>
+  <EditBounds><Rect left="-8" top="-8" width="3456" height="1416"/></EditBounds>
+  <WindowMaximized>1</WindowMaximized>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation></EditorLocation>
+    <EditorLocation>WebPage1.Shown</EditorLocation>
     <EditorPath></EditorPath>
+    <EditingPartID>1154066431</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
