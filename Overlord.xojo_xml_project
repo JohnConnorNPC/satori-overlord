@@ -7,7 +7,7 @@
  <MinorVersion>0</MinorVersion>
  <SubVersion>0</SubVersion>
  <Release>2</Release>
- <NonRelease>41</NonRelease>
+ <NonRelease>42</NonRelease>
  <Region></Region>
  <ShortVersion></ShortVersion>
  <LongVersion></LongVersion>
@@ -200,6 +200,9 @@
    <SourceLine>KeyStore.SetValue("install_minion.sh","Hidden")</SourceLine>
    <SourceLine>KeyStore.SetValue("install_overlord.sh","Hidden")</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim trigger As String = KeyStore.GetValue("client_trigger","")</SourceLine>
+   <SourceLine>If trigger.IsEmpty Then KeyStore.SetValue("client_trigger","30")</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -575,7 +578,11 @@
    <SourceLine>//listbox.AddRow(rs.Column("hostname").StringValue)</SourceLine>
    <SourceLine>hosts.Value(rs.Column("hostname").StringValue)=datetime(new datetime(rs.Column("last_checkin").DoubleValue)).SQLDateTime</SourceLine>
    <SourceLine>Dim d As Double = rs.Column("last_checkin").DoubleValue</SourceLine>
-   <SourceLine>If d &lt; DateTime.Now.SecondsFrom1970 - 120 Then latehosts.Value(rs.Column("hostname").StringValue)=rs.Column("hostname").StringValue</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim late_minion As Integer = KeyStore.GetValue("client_trigger","60").Val * 4</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If d &lt; DateTime.Now.SecondsFrom1970 - late_minion Then latehosts.Value(rs.Column("hostname").StringValue)=rs.Column("hostname").StringValue</SourceLine>
    <SourceLine>'System.DebugLog(Format(d,"################"))</SourceLine>
    <SourceLine>'System.DebugLog(Format(DateTime.now.SecondsFrom1970,"################"))</SourceLine>
    <SourceLine></SourceLine>
@@ -6033,9 +6040,9 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Container_Minion</EditorLocation>
+    <EditorLocation>WebPage1.UpdateHostnameListBox</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>247318527</EditingPartID>
+    <EditingPartID>1154066431</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
