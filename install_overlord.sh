@@ -1,7 +1,7 @@
 
 apt-get update
 apt install dos2unix libunwind8 libglib2.0-0 ca-certificates -y
-
+chmod +x /overlord/overlord.sh
 #Install Cron Job
 cron_job="@reboot /overlord/overlord.sh"
 crontab -l > /tmp/current_cron
