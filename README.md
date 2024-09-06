@@ -88,6 +88,14 @@ This will install the minion and connect it to the Overlord server.
 
 ---
 
+## ToDo
+Adjust stat collection in minion.py, show stats and job results for minions in pop out window in gui.
+Fix the text at the top to show hosts total & hosts online & hosts in error
+Add search field
+add ability to only show hosts in error
+
+---
+
 ## License
 
 This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License - see the [LICENSE](LICENSE.md) file for details.
