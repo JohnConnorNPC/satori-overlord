@@ -7,7 +7,7 @@
  <MinorVersion>0</MinorVersion>
  <SubVersion>0</SubVersion>
  <Release>2</Release>
- <NonRelease>40</NonRelease>
+ <NonRelease>41</NonRelease>
  <Region></Region>
  <ShortVersion></ShortVersion>
  <LongVersion></LongVersion>
@@ -329,12 +329,12 @@
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
  <Compatibility></Compatibility>
- <PropertyVal Name="SendEventsInBatches">True</PropertyVal>
- <PropertyVal Name="ColorMode">2</PropertyVal>
- <PropertyVal Name="AllowTabOrderWrap">True</PropertyVal>
- <PropertyVal Name="ConfirmMessage"></PropertyVal>
- <PropertyVal Name="DisconnectMessage">You have been disconnected from this application.</PropertyVal>
  <PropertyVal Name="InterruptMessage">We are having trouble communicating with the server. Please wait a moment while we attempt to reconnect.</PropertyVal>
+ <PropertyVal Name="DisconnectMessage">You have been disconnected from this application.</PropertyVal>
+ <PropertyVal Name="ConfirmMessage"></PropertyVal>
+ <PropertyVal Name="AllowTabOrderWrap">True</PropertyVal>
+ <PropertyVal Name="ColorMode">2</PropertyVal>
+ <PropertyVal Name="SendEventsInBatches">True</PropertyVal>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -1095,6 +1095,12 @@
     <SourceLine>Case "Delete"</SourceLine>
     <SourceLine>' Select all from the database, remove the selected entries, clear the list box, and refresh.</SourceLine>
     <SourceLine>' Implementation needed here.</SourceLine>
+    <SourceLine>Case "View"</SourceLine>
+    <SourceLine>Dim m As New Container_Minion</SourceLine>
+    <SourceLine>m.ShowPopover(Label1)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
     <SourceLine>End Select</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>End Sub</SourceLine>
@@ -1123,7 +1129,8 @@
     <SourceLine></SourceLine>
     <SourceLine>' Add menu options for user interactions</SourceLine>
     <SourceLine>menu.AddMenuItem("Refresh")</SourceLine>
-    <SourceLine>menu.AddMenuItem("==============") </SourceLine>
+    <SourceLine>menu.AddMenuItem("==============")</SourceLine>
+    <SourceLine>menu.AddMenuItem("View")</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>' System maintenance options</SourceLine>
     <SourceLine>menu.AddMenuItem("System Keeping")</SourceLine>
@@ -1561,13 +1568,13 @@
   <PropertyVal Name="TabIndex">0</PropertyVal>
   <PropertyVal Name="TabStop">True</PropertyVal>
   <PropertyVal Name="Tooltip"></PropertyVal>
-  <PropertyVal Name="Top">73</PropertyVal>
+  <PropertyVal Name="Top">74</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">1397</PropertyVal>
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1503231999</PartID>
+  <PartID>1594832895</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -1585,7 +1592,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>88856575</PartID>
+  <PartID>790650879</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -1624,7 +1631,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>558895103</PartID>
+  <PartID>1231464447</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1659,7 +1666,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>65400831</PartID>
+  <PartID>1536032767</PartID>
  </Control>
  <Control>
   <ControlClass>WebListBox</ControlClass>
@@ -1708,7 +1715,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1416787967</PartID>
+  <PartID>363048959</PartID>
  </Control>
  <Control>
   <ControlClass>WebFileUploader</ControlClass>
@@ -1745,7 +1752,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1617436671</PartID>
+  <PartID>687323135</PartID>
  </Control>
  <Control>
   <ControlClass>WebCheckbox</ControlClass>
@@ -1778,7 +1785,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1149417471</PartID>
+  <PartID>866844671</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -1796,7 +1803,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1818693631</PartID>
+  <PartID>1905807359</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1831,7 +1838,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>210608127</PartID>
+  <PartID>527874047</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Reboot</ControlClass>
@@ -1869,7 +1876,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>366047231</PartID>
+  <PartID>135243775</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Shutdown</ControlClass>
@@ -1908,7 +1915,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1464336383</PartID>
+  <PartID>924801023</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -1943,7 +1950,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>11</ControlIndex>
   <Locked>0</Locked>
-  <PartID>682375167</PartID>
+  <PartID>1585719295</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -1982,7 +1989,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>12</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1646497791</PartID>
+  <PartID>2010978303</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -2000,7 +2007,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>13</ControlIndex>
   <Locked>0</Locked>
-  <PartID>950511615</PartID>
+  <PartID>951093247</PartID>
  </Control>
  <Control>
   <ControlClass>WebDialog_Delete</ControlClass>
@@ -2039,7 +2046,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>14</ControlIndex>
   <Locked>0</Locked>
-  <PartID>421042175</PartID>
+  <PartID>1724016639</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="60266495">
@@ -3115,7 +3122,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2037057535</PartID>
+  <PartID>1304049663</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3150,7 +3157,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>601780223</PartID>
+  <PartID>374425599</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3185,7 +3192,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1864546303</PartID>
+  <PartID>884991999</PartID>
  </Control>
  <Control>
   <ControlClass>WebTimer</ControlClass>
@@ -3203,7 +3210,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2136678399</PartID>
+  <PartID>1704949759</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3242,7 +3249,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1973432319</PartID>
+  <PartID>262952959</PartID>
  </Control>
 </block>
 <block type="WebContainer" ID="98473983">
@@ -3627,7 +3634,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1320544255</PartID>
+  <PartID>876396543</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3666,7 +3673,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>583434239</PartID>
+  <PartID>1672738815</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3705,7 +3712,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>633962495</PartID>
+  <PartID>2100635647</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3744,7 +3751,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>98727935</PartID>
+  <PartID>1456171007</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3783,7 +3790,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1060171775</PartID>
+  <PartID>843159551</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3822,7 +3829,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>36282367</PartID>
+  <PartID>1116796927</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3861,7 +3868,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1844260863</PartID>
+  <PartID>495927295</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -3896,7 +3903,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1567801343</PartID>
+  <PartID>1300592639</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -3935,7 +3942,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1722480639</PartID>
+  <PartID>1433098239</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -3974,7 +3981,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1827325951</PartID>
+  <PartID>720879615</PartID>
  </Control>
  <Control>
   <ControlClass>WebTextField</ControlClass>
@@ -4013,7 +4020,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1078429695</PartID>
+  <PartID>2054936575</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -4052,7 +4059,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>11</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1301094399</PartID>
+  <PartID>352468991</PartID>
  </Control>
  <Control>
   <ControlClass>WebCheckbox</ControlClass>
@@ -4085,7 +4092,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>12</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1879392255</PartID>
+  <PartID>80521215</PartID>
  </Control>
  <Control>
   <ControlClass>WebLabel</ControlClass>
@@ -4124,7 +4131,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>13</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1604530175</PartID>
+  <PartID>1716924415</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4159,7 +4166,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>14</ControlIndex>
   <Locked>0</Locked>
-  <PartID>252899327</PartID>
+  <PartID>546691071</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4194,7 +4201,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>15</ControlIndex>
   <Locked>0</Locked>
-  <PartID>402282495</PartID>
+  <PartID>66297855</PartID>
  </Control>
 </block>
 <block type="WebView" ID="514918399">
@@ -4511,7 +4518,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1402032127</PartID>
+  <PartID>1666441215</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4546,7 +4553,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>768903167</PartID>
+  <PartID>1318070271</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4581,7 +4588,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>903809023</PartID>
+  <PartID>1149288447</PartID>
  </Control>
 </block>
 <block type="WebView" ID="492783615">
@@ -4898,7 +4905,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>86169599</PartID>
+  <PartID>141776895</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4933,7 +4940,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1989531647</PartID>
+  <PartID>1450883071</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -4968,7 +4975,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1207523327</PartID>
+  <PartID>1316044799</PartID>
  </Control>
 </block>
 <block type="WebView" ID="1046253567">
@@ -5285,7 +5292,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1766522879</PartID>
+  <PartID>1387274239</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -5320,7 +5327,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>769363967</PartID>
+  <PartID>1974747135</PartID>
  </Control>
  <Control>
   <ControlClass>WebButton</ControlClass>
@@ -5355,7 +5362,7 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1746665471</PartID>
+  <PartID>1752848383</PartID>
  </Control>
 </block>
 <block type="WebContainer" ID="839344127">
@@ -5635,7 +5642,371 @@
   <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>778688511</PartID>
+  <PartID>1526573055</PartID>
+ </Control>
+</block>
+<block type="WebContainer" ID="247318527">
+ <ObjName>Container_Minion</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>WebContainer</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <HookInstance>
+  <ItemName>Opening</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>578942975</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Opening()</SourceLine>
+   <SourceLine>If WebPage1.ListBox1.SelectedRowIndex =-1 Then Return</SourceLine>
+   <SourceLine>Dim minion As String = WebPage1.ListBox1.CellTextAt(WebPage1.ListBox1.SelectedRowIndex,0)</SourceLine>
+   <SourceLine>Label1.Text=minion</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If host_metrics.HasKey(minion) Then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim m As Dictionary = host_metrics.Value(minion)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>For Each mm As DictionaryEntry In m</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ListBox1.AddRow(mm.Key,mm.Value)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <PropertyVal Name="LayoutDirection">0</PropertyVal>
+ <PropertyVal Name="LayoutType">0</PropertyVal>
+ <PropertyVal Name="Indicator">0</PropertyVal>
+ <PropertyVal Name="TabIndex">0</PropertyVal>
+ <PropertyVal Name="ScrollDirection">0</PropertyVal>
+ <PropertyVal Name="_mDesignWidth">0</PropertyVal>
+ <PropertyVal Name="_mDesignHeight">0</PropertyVal>
+ <PropertyVal Name="Width">1066</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="LockVertical">False</PropertyVal>
+ <PropertyVal Name="LockTop">True</PropertyVal>
+ <PropertyVal Name="LockRight">False</PropertyVal>
+ <PropertyVal Name="LockLeft">True</PropertyVal>
+ <PropertyVal Name="LockHorizontal">False</PropertyVal>
+ <PropertyVal Name="LockBottom">False</PropertyVal>
+ <PropertyVal Name="Height">818</PropertyVal>
+ <PropertyVal Name="Enabled">True</PropertyVal>
+ <PropertyVal Name="ControlID"></PropertyVal>
+ <PropertyVal Name="Top">0</PropertyVal>
+ <PropertyVal Name="Left">0</PropertyVal>
+ <PropertyVal Name="ControlCount">0</PropertyVal>
+ <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
+ <PropertyVal Name="PanelIndex">0</PropertyVal>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>PanelIndex</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>_mPanelIndex</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>-1</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ControlCount</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ControlID</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Enabled</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockBottom</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockHorizontal</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockLeft</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockRight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockTop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockVertical</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>_mDesignHeight</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>_mDesignWidth</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>_mName</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ScrollDirection</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>ScrollDirections.None</PropertyValue>
+   <ItemType>WebContainer.ScrollDirections</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - None</ItemDef>
+    <ItemDef>1 - Horizontal</ItemDef>
+    <ItemDef>2 - Vertical</ItemDef>
+    <ItemDef>3 - Both</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TabIndex</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Visual Controls</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Indicator</ObjName>
+   <PropertyGroup>Visual Controls</PropertyGroup>
+   <ItemType>WebUIControl.Indicators</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Default</ItemDef>
+    <ItemDef>1 - Primary</ItemDef>
+    <ItemDef>2 - Secondary</ItemDef>
+    <ItemDef>3 - Success</ItemDef>
+    <ItemDef>4 - Danger</ItemDef>
+    <ItemDef>5 - Warning</ItemDef>
+    <ItemDef>6 - Info</ItemDef>
+    <ItemDef>7 - Light</ItemDef>
+    <ItemDef>8 - Dark</ItemDef>
+    <ItemDef>9 - Link</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LayoutType</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>View</PropertyGroup>
+   <PropertyValue>LayoutTypes.Fixed</PropertyValue>
+   <ItemType>LayoutTypes</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Fixed</ItemDef>
+    <ItemDef>1 - Flex</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LayoutDirection</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>View</PropertyGroup>
+   <PropertyValue>LayoutDirections.LeftToRight</PropertyValue>
+   <ItemType>LayoutDirections</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - LeftToRight</ItemDef>
+    <ItemDef>1 - RightToLeft</ItemDef>
+    <ItemDef>2 - TopToBottom</ItemDef>
+    <ItemDef>3 - BottomToTop</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <PropertyValue>250</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <PropertyValue>250</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <ControlBehavior>
+  <Superclass>WebLabel</Superclass>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>WebListBox</Superclass>
+  <HookInstance>
+   <ItemName>Shown</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1148235775</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Shown()</SourceLine>
+    <SourceLine>Me.HeaderAt(0)="Item"</SourceLine>
+    <SourceLine>Me.HeaderAt(1)="Value"</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>WebLabel</ControlClass>
+  <ItemName>WebLabel</ItemName>
+  <PropertyVal Name="Bold">True</PropertyVal>
+  <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="FontName"></PropertyVal>
+  <PropertyVal Name="FontSize">0.00</PropertyVal>
+  <PropertyVal Name="Height">38</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Indicator"></PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockHorizontal">False</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockVertical">False</PropertyVal>
+  <PropertyVal Name="Multiline">False</PropertyVal>
+  <PropertyVal Name="Name">Label1</PropertyVal>
+  <PropertyVal Name="PanelIndex">0</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">WebLabel</PropertyVal>
+  <PropertyVal Name="TabIndex">0</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="Text">minion</PropertyVal>
+  <PropertyVal Name="TextAlignment">2</PropertyVal>
+  <PropertyVal Name="TextColor">&amp;c000000FF</PropertyVal>
+  <PropertyVal Name="Tooltip"></PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">1066</PropertyVal>
+  <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>932116479</PartID>
+ </Control>
+ <Control>
+  <ControlClass>WebListBox</ControlClass>
+  <ItemName>WebListBox</ItemName>
+  <PropertyVal Name="ColumnCount">2</PropertyVal>
+  <PropertyVal Name="ColumnWidths"></PropertyVal>
+  <PropertyVal Name="ControlID"></PropertyVal>
+  <PropertyVal Name="DefaultRowHeight">49</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="GridLineStyle">3</PropertyVal>
+  <PropertyVal Name="HasBorder">True</PropertyVal>
+  <PropertyVal Name="HasHeader">True</PropertyVal>
+  <PropertyVal Name="HeaderHeight">0</PropertyVal>
+  <PropertyVal Name="Height">752</PropertyVal>
+  <PropertyVal Name="HighlightSortedColumn">True</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Indicator"></PropertyVal>
+  <PropertyVal Name="InitialValue"></PropertyVal>
+  <PropertyVal Name="LastAddedRowIndex">0</PropertyVal>
+  <PropertyVal Name="LastColumnIndex">0</PropertyVal>
+  <PropertyVal Name="LastRowIndex">0</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="LockHorizontal">False</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockVertical">False</PropertyVal>
+  <PropertyVal Name="Name">ListBox1</PropertyVal>
+  <PropertyVal Name="NoRowsMessage"></PropertyVal>
+  <PropertyVal Name="PanelIndex">0</PropertyVal>
+  <PropertyVal Name="ProcessingMessage"></PropertyVal>
+  <PropertyVal Name="RowCount">0</PropertyVal>
+  <PropertyVal Name="RowSelectionType">1</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="SearchCriteria"></PropertyVal>
+  <PropertyVal Name="SelectedRowColor">&amp;c0d6efd</PropertyVal>
+  <PropertyVal Name="SelectedRowIndex">0</PropertyVal>
+  <PropertyVal Name="Super">WebListBox</PropertyVal>
+  <PropertyVal Name="TabIndex">1</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="Tooltip"></PropertyVal>
+  <PropertyVal Name="Top">46</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">1026</PropertyVal>
+  <PropertyVal Name="_mPanelIndex">-1</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>934322175</PartID>
  </Control>
 </block>
 <block type="UIState" ID="0">
@@ -5662,9 +6033,9 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>WebPage1.Shown</EditorLocation>
+    <EditorLocation>Container_Minion</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1154066431</EditingPartID>
+    <EditingPartID>247318527</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
